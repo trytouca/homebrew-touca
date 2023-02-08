@@ -145,6 +145,12 @@ class Touca < Formula
   end
 
   test do
-    system bin/"touca", "version"
+    assert_match "v#{version}", shell_output("#{bin}/touca version")
+    assert_equal "", shell_output("#{bin}/touca profile set test-profile")
+    assert_equal "", shell_output("#{bin}/touca config set some-key=some-value")
+    assert_match "some-key", shell_output("#{bin}/touca config show")
+    assert_match "some-value", shell_output("#{bin}/touca config show")
+    assert_match "test-profile", shell_output("#{bin}/touca profile ls")
+    assert_equal "", shell_output("#{bin}/touca profile rm test-profile")
   end
 end
