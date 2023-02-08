@@ -5,9 +5,9 @@ class Touca < Formula
   homepage "https://github.com/trytouca/trytouca/tree/main/sdk/python"
   url "https://files.pythonhosted.org/packages/ee/f8/275a4418b983be18f24bc6a16aca89364fb5af5331047f4b94a04722bb9b/touca-1.8.6.tar.gz"
   sha256 "a3f35dfbb1f7aa45cef327e0b8fd30fde50e9bbfc5941f38df9df1ee2f154df7"
+  license "Apache-2.0"
 
   depends_on "python3"
-  license "Apache-2.0"
 
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/21/31/3f468da74c7de4fcf9b25591e682856389b3400b4b62f201e65f15ea3e07/attrs-22.2.0.tar.gz"
