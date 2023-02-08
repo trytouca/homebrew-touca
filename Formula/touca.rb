@@ -1,12 +1,13 @@
 class Touca < Formula
   include Language::Python::Virtualenv
-  desc "Open source tool for regression testing complex software workflows"
-  homepage "https://touca.io/"
-  url "https://files.pythonhosted.org/packages/ef/d7/c19d5cc50d56ace8bdbb70ab17611b970f231208889c1eda7257cc5e8a54/touca-1.8.5.tar.gz"
-  sha256 "60462cbfb2b74a1be0fa8370acdd1f53d1ff3f2fde353a053fea0d6ecbc88277"
-  license "Apache-2.0"
 
-  depends_on "python@3.11"
+  desc "Open source tool for regression testing complex software workflows"
+  homepage "https://github.com/trytouca/trytouca/tree/main/sdk/python"
+  url "https://files.pythonhosted.org/packages/ee/f8/275a4418b983be18f24bc6a16aca89364fb5af5331047f4b94a04722bb9b/touca-1.8.6.tar.gz"
+  sha256 "a3f35dfbb1f7aa45cef327e0b8fd30fde50e9bbfc5941f38df9df1ee2f154df7"
+
+  depends_on "python3"
+  license "Apache-2.0"
 
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/21/31/3f468da74c7de4fcf9b25591e682856389b3400b4b62f201e65f15ea3e07/attrs-22.2.0.tar.gz"
@@ -39,8 +40,8 @@ class Touca < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/ea/b7/e0e3c1c467636186c39925827be42f16fee389dc404ac29e930e9136be70/idna-2.10.tar.gz"
-    sha256 "b307872f855b18632ce0c21c5e45be78c0ea7ae4c15c828c20788b26921eb3f6"
+    url "https://files.pythonhosted.org/packages/8b/e1/43beb3d38dba6cb420cefa297822eac205a277ab43e5ba5d5c46faf96438/idna-3.4.tar.gz"
+    sha256 "814f528e8dead7d329833b91c5faa87d60bf71824cd12a7530b5526063d02cb4"
   end
 
   resource "inflate64" do
@@ -89,8 +90,8 @@ class Touca < Formula
   end
 
   resource "pycryptodomex" do
-    url "https://files.pythonhosted.org/packages/5d/22/575c7dd7c86843e07a791cfa2143e7292d6b380f5a7cce966a49b9d6c9f4/pycryptodomex-3.16.0.tar.gz"
-    sha256 "e9ba9d8ed638733c9e95664470b71d624a6def149e2db6cc52c1aca5a6a2df1d"
+    url "https://files.pythonhosted.org/packages/3d/07/cfd8f52b9068877801317d26dc7225e19421bc659e1395d2cd6933b1a351/pycryptodomex-3.17.tar.gz"
+    sha256 "0af93aad8d62e810247beedef0261c148790c52f3cd33643791cc6396dd217c1"
   end
 
   resource "Pygments" do
@@ -119,8 +120,8 @@ class Touca < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/9e/5e/c3dc3ea32e2c14bfe46e48de954dd175bff76bcc549dd300acb9689521ae/rich-13.2.0.tar.gz"
-    sha256 "f1a00cdd3eebf999a15d85ec498bfe0b1a77efe9b34f645768a54132ef444ac5"
+    url "https://files.pythonhosted.org/packages/68/31/b8934896818c885001aeb7df388ba0523ea3ec88ad31805983d9b0480a50/rich-13.3.1.tar.gz"
+    sha256 "125d96d20c92b946b983d0d392b84ff945461e5a06d3867e9f9e575f8697b67f"
   end
 
   resource "texttable" do
@@ -129,8 +130,8 @@ class Touca < Formula
   end
 
   resource "touca-fbs" do
-    url "https://files.pythonhosted.org/packages/5a/3a/344e41a6927e2238b12092d8d2ea137010cde595b1f1e6021d61a5966590/touca-fbs-0.0.1.tar.gz"
-    sha256 "4704fcf3edd5da65068f8ac3fff96614c39eddfae69b0db614b185610754096a"
+    url "https://files.pythonhosted.org/packages/2e/a5/03ac1f461efef22608333404c6cd12d2bc4d16c2bc1fe43bd52a18e7e084/touca-fbs-0.0.2.tar.gz"
+    sha256 "b75f22b57749ea362db87c532b74bf51fc757ec60492037fc10ca7371b7299bf"
   end
 
   resource "urllib3" do
@@ -139,6 +140,7 @@ class Touca < Formula
   end
 
   def install
+    virtualenv_create(libexec, "python3")
     virtualenv_install_with_resources
   end
 
